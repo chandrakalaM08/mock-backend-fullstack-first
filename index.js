@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.use("/users" , userRouter)
+app.use("" , userRouter)
 app.use("/doctors" , doctorRouter)
 app.listen(process.env.port, async () => {
   try {
