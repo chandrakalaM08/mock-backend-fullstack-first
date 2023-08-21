@@ -3,9 +3,6 @@ const {Router} = require("express")
 const doctorRouter = Router()
 const {DoctorModel} = require("../models/doctorModel")
 const {authMiddleware} = require("../middleware/authMiddleware")
-doctorRouter.get("/",(req,res)=>{
-    res.send("Welcome to doctors page")
-})
 
 
 doctorRouter.post("/appointments" ,authMiddleware, async(req,res)=>{
@@ -25,7 +22,7 @@ doctorRouter.post("/appointments" ,authMiddleware, async(req,res)=>{
 })
 
 
-doctorRouter.get("/appointments" ,async(req,res)=>{
+doctorRouter.get("/" ,async(req,res)=>{
     try {
         let {name , date, specialization} = req.query 
         let query = {}
